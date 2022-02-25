@@ -1,0 +1,15 @@
+[package]
+name = "wrapped-sm-for-lua"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "wsm4lua"
+crate-type = ["cdylib"]
+
+
+[dependencies]
+yarism = { git = "ssh://git@github.com/bytesboy/Yet-Another-Rust-Implementation-Of-SM-Algorithms.git" }
+mlua = { version = "0.7", features = ["lua54", "vendored", "module"] }
