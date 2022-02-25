@@ -121,7 +121,7 @@ mod sm4 {
 
 
 #[mlua::lua_module]
-fn wsm4lua(lua: &Lua) -> LuaResult<LuaTable> {
+fn wsm4l(lua: &Lua) -> LuaResult<LuaTable> {
     let exports = lua.create_table()?;
 
     exports.set("sm2_generate_key", lua.create_function(sm2::generate_key)?)?;
