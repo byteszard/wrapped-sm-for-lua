@@ -6,8 +6,8 @@ mod sm2 {
     use mlua::Lua;
     use mlua::prelude::LuaResult;
 
-    pub(crate) fn generate_key(_: &Lua, _: ()) -> LuaResult<(String, String)> {
-        let pair = yarism::sm2::generate_key();
+    pub(crate) fn generate_keypair(_: &Lua, _: ()) -> LuaResult<(String, String)> {
+        let pair = yarism::sm2::generate_keypair();
         Ok(pair)
     }
 
@@ -124,7 +124,7 @@ mod sm4 {
 fn wsm4l(lua: &Lua) -> LuaResult<LuaTable> {
     let exports = lua.create_table()?;
 
-    exports.set("sm2_generate_key", lua.create_function(sm2::generate_key)?)?;
+    exports.set("sm2_generate_keypair", lua.create_function(sm2::generate_keypair)?)?;
     exports.set("sm2_encrypt", lua.create_function(sm2::encrypt)?)?;
     exports.set("sm2_decrypt", lua.create_function(sm2::decrypt)?)?;
     exports.set("sm2_encrypt_c1c2c3", lua.create_function(sm2::encrypt_c1c2c3)?)?;
