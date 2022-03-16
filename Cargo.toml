@@ -11,5 +11,5 @@ crate-type = ["cdylib"]
 
 
 [dependencies]
-yarism = { git = "ssh://git@github.com/bytesboy/Yet-Another-Rust-Implementation-Of-SM-Algorithms.git" }
+yarism = { git = "ssh://git@10.18.34.36:16822/Rocup_TecOne_Naughty/Yet-Another-Rust-Implementation-Of-SM-Algorithms.git" }
 mlua = { version = "0.7", features = ["lua54", "vendored", "module"] }
